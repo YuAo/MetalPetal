@@ -180,7 +180,7 @@ extension MTIImage {
             let format = UIGraphicsImageRendererFormat.preferred()
             format.opaque = isOpaque
             format.scale = image.scale
-            cgImage = UIGraphicsImageRenderer(size: image.size).image { _ in
+            cgImage = UIGraphicsImageRenderer(size: image.size, format: format).image { _ in
                 image.draw(at: .zero)
             }.cgImage!
             orientation = .up
